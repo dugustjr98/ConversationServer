@@ -59,6 +59,11 @@ public class ConServerHandler extends Thread {
                 }else{//방안에 있을 때
                     List<ConUser> conUsers = conHouse.getUser(conUser);
                     for(ConUser cu:conUsers){
+                        if(message.equals("/out")){
+                            conUsers.remove(conUser);
+                            inRoom = false;
+                            break;
+                        }
                         cu.write(conUser.getNickName()+" : "+message);
                     }
                 }
