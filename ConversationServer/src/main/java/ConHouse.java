@@ -41,6 +41,10 @@ public class ConHouse {
         return rooms;
     }
 
+    public List<ConUser> getLobby() {
+        return lobby;
+    }
+
     public void joinRoom(int roomNum,ConUser conUser){
         ConRoom conRoom = rooms.get(roomNum);
         conRoom.addConUser(conUser);
