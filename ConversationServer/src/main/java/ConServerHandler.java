@@ -65,12 +65,7 @@ public class ConServerHandler extends Thread {
                             String strRoomNum="";
                             String password;
                             int roomNum=0;
-                            int i = 0;
-                            conUser.write(" --- 현재 열려있는 방 목록 --- ");
-                            for(ConRoom cr:rooms){
-                                conUser.write(i+" : "+cr.getTitle());
-                                i++;
-                            }
+                            RoomList(conUser, rooms);
                             conUser.write("입장할 방 번호를 입력하세요. : ");
                             strRoomNum = conUser.read();
                             roomNum = Integer.parseInt(strRoomNum);
@@ -92,12 +87,7 @@ public class ConServerHandler extends Thread {
                         }
                         case "/list":{
                             List<ConRoom> rooms = conHouse.getRooms();
-                            int i=0;
-                            conUser.write(" --- 현재 열려있는 방 목록 --- ");
-                            for(ConRoom cr:rooms){
-                                conUser.write(i+" : "+cr.getTitle());
-                                i++;
-                            }
+                            RoomList(conUser, rooms);
                             break;
                         }
                         case "/delete":{
@@ -164,6 +154,19 @@ public class ConServerHandler extends Thread {
 
         }catch(Exception ex){
             conHouse.exit(conUser);
+        }
+    }
+
+
+    private void RoomList(ConUser conUser, List<ConRoom> rooms) {
+        /*
+        아래 코드들이 중복이 되는 코드들이라 새로운 메소드를 생성해서 코드의 양을 줄여보았습니다^^
+         */
+        int i = 0;
+        conUser.write(" --- 현재 열려있는 방 목록 --- ");
+        for(ConRoom cr:rooms){
+            conUser.write(i+" : "+cr.getTitle());
+            i++;
         }
     }
 }
