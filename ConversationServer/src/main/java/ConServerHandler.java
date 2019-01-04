@@ -29,10 +29,10 @@ public class ConServerHandler extends Thread {
 
                     switch (message){
                         case "/help":{
-                            conUser.write(" --- 로비 명령어 --- \n /help 명령어 확인 \n /create : 방을 만들고 들어갑니다. " +
-                                    "\n /list : 방 목록을 방 번호와 함께 보여줍니다. \n /join 해당 번호의 방으로 들어갑니다. " +
-                                    "\n /delete 방에 아무도 없을 때, 해당 번호의 방을 폭파합니다. \n /who 전체 유저를 보여줍니다. \n /quit 채팅 프로그램을 종료합니다. " +
-                                    "\n --- 채팅방 내 명령어 --- \n /who 채팅방 안에 있는 사람들을 보여줍니다. \n /out 채팅방에서 나옵니다. \n ");
+                            conUser.write(" --- 로비 명령어 --- \n /help : 명령어 확인 \n /create : 방을 만들고 들어갑니다. " +
+                                    "\n /list : 방 목록을 방 번호와 함께 보여줍니다. \n /join : 해당 번호의 방으로 들어갑니다. " +
+                                    "\n /delete : 방에 아무도 없을 때, 해당 번호의 방을 폭파합니다. \n /who : 전체 유저를 보여줍니다. \n /quit : 채팅 프로그램을 종료합니다. " +
+                                    "\n --- 채팅방 내 명령어 --- \n /who : 채팅방 안에 있는 사람들을 보여줍니다. \n /out : 채팅방에서 나옵니다. \n ");
                             break;
                         }
                         case "/create":{
